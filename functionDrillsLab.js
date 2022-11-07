@@ -11,8 +11,11 @@
   Call the function.
 */
 
-//CODE HERE
+function helloWorld() {
+  console.log('Hello, World!');
+}
 
+helloWorld();
 
 ////////////////// PROBLEM 2 ////////////////////
 
@@ -20,8 +23,9 @@
     Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
 */
 
-//CODE HERE
-
+const jsNinja = () => {
+  return 'I am JavaScript ninja!'
+}
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -30,8 +34,11 @@
   Call the function, passing in an argument.
 */
 
-//CODE HERE
+function printName(name) {
+  console.log(name);
+}
 
+printName('King');
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -43,8 +50,11 @@
   Make sure to call your function and pass in an argument.
 */
 
-//CODE HERE
+function greeting(name) {
+  console.log(`Hello, ${name}`);
+}
 
+greeting('Obie Won');
 
 ////////////////// PROBLEM 5 ////////////////////
 
@@ -57,7 +67,7 @@
     Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
 */
 
-//CODE HERE
+const compareNums = (num1, num2) => (num1 > num2) ? num1 : num2;
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -68,8 +78,9 @@
   Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
 */
 
-//CODE HERE
-
+function add(num1, num2) {
+  return Number(num1) + Number(num2);
+}
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -78,13 +89,13 @@
   Uncomment the correct `console.log` underneath.
 */
 
-const exclaim = function(str) {
+const exclaim = function (str) {
   return str.toUpperCase() + '!!!'
 }
 
 // console.log('arrow')
 // console.log('declaration')
-// console.log('expression')
+console.log('expression')
 
 
 
@@ -99,7 +110,7 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
-// console.log('arrow')
+console.log('arrow')
 // console.log('declaration')
 // console.log('expression')
 
@@ -110,7 +121,7 @@ const exclaimTwo = str => {
   Brownie points if you use a template string
 */
 
-
+const exclaimThree = str => `${str.toUpperCase()}!!!`;
 
 ////////////////// PROBLEM 9 ////////////////////
 
@@ -124,7 +135,7 @@ function exclaimFour(str) {
 }
 
 // console.log('arrow')
-// console.log('declaration')
+console.log('declaration')
 // console.log('expression')
 
 
@@ -137,8 +148,13 @@ function exclaimFour(str) {
   Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
 
-//CODE HERE
+function nameCheck(name) {
+  return name === 'Steven' ? 'What is up Steven?' : name === 'Bryan' ? 'Hey Bryan!' : `Cool name, ${name}`;
+}
 
+let nameGreeting = nameCheck('Grogu');
+
+// console.log(nameGreeting)
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -150,7 +166,19 @@ function exclaimFour(str) {
   Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
 */
 
-//CODE HERE
+function faveColorFinder(color) {
+  if (color === 'red') {
+    return 'red is a great color'
+  } else if (color === 'green') {
+    return 'green is a solid favorite color'
+  } else if (color === 'black') {
+    return 'so trendy'
+  } else {
+    return 'you need to evaluate your favorite color choice'
+  }
+}
+
+let colorRating = faveColorFinder('purple');
 
 
 ////////////////// PROBLEM 12 ////////////////////
@@ -161,8 +189,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
   Call the function, passing in the `namesArr` array (above).
 */
 
-//CODE HERE
+function printAllNames(names) {
+  for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+  }
+}
 
+printAllNames(namesArr);
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -172,8 +205,15 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
   Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
 */
 
-//CODE HERE
+function thatsOdd(num) {
+  if (num % 2 === 0) {
+    return "That's not odd!"
+  } else {
+    return 'That is odd indeed!'
+  }
+}
 
+let oddChecker = thatsOdd(33);
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -185,11 +225,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
     we would expect the function to return 'Sharknado is the best movie ever!'
 */
 
-//CODE HERE
+let bestMovie = (movie) => `${movie} is the best movie ever!`;
 
+// console.log(bestMovie('Love & Basketball'));
 
 ////////////////// PROBLEM 15 ////////////////////
-let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107]
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
   Inside of the bigOrSmall function, create a new array called 'answers'. 
@@ -199,8 +240,21 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
   Return the answers array inside of the function to a variable called `arrayEvaluator`.
 */
 
-//CODE HERE
+function bigOrSmall(arr) {
+  let answers = [];
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] <= 100) {
+      answers.push('small');
+    } else {
+      answers.push('big')
+    }
+  }
+
+  return answers;
+}
+
+// console.log((bigOrSmall(bigOrSmallArray)));
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -210,8 +264,19 @@ let loser = 'Glimmer'
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
-//CODE HERE
+function theEliminator(arr, str) {
+  let newContestants = [...arr]
 
+  for (let i = 0; i < newContestants.length; i++) {
+    if (newContestants[i] === str) {
+      newContestants.splice(i, 1)
+    }
+  }
+
+  return newContestants;
+}
+
+// console.log(theEliminator(contestants, loser));
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -220,8 +285,11 @@ let sampleString = "Hi, my name is Kylo."
   Invoke the function, passing in the sampleString (above).
 */
 
-//CODE HERE
+function upper(str) {
+  return str.toUpperCase();
+}
 
+console.log(upper(sampleString));
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -234,31 +302,56 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+function emailCheck(email) {
+  email.trim()
+  return email.includes('@') ? 'email verified' : 'must provide a valid email address';
+}
+
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
 
-//CODE HERE
+function buyFrogs(gold) {
+  let frogPrice = 3;
 
+  return Math.floor(gold / frogPrice);
+}
+
+let totalFrogs = buyFrogs(30);
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
-//CODE HERE
+function buyFrogs2(gold) {
+  let frogPrice = 3;
+
+  return Math.floor(gold / frogPrice);
+}
+
+let totalFrogs2 = buyFrogs2(10);
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
-//CODE HERE
+function isAscending(arr) {
+  let ascCopy = [...arr].sort();
 
+  return ascCopy.toString() === arr.toString() ? true : false;
+
+}
+
+let arrayIsAscending = isAscending(sampleArray);
+
+// console.log(arrayIsAscending);
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -282,13 +375,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['cute']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['rubberDuck',]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['rubberDuck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['realDuck']
